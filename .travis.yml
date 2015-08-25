@@ -6,7 +6,7 @@ deploy:
   api: https://api.run.pivotal.io
   username: sureshasbe@gmail.com
   password:
-    secure: eSSHEjTHvAph//Wznmd5xVG9bRv85lglykhL+IjcOZbYzXn6A6GLuZwFnVzx3Oe0mdQ03
+secure:eSSHEjTHvAph//Wznmd5xVG9bRv85lglykhL+IjcOZbYzXn6A6GLuZwFnVzx3Oe0mdQ03
 vYEUIP6mY10t58vShOnyWq4dKOxNRqZFROnL8l4PYTwNaKn0xPwBHsPEQRTe9AIahT51CX35FaKIwrx2
 IvpTWV4m/ovuER1syr5pHnydEDLQk85AREHxV1STUsazvT0IGglX4A+hHXYCuGUKPAlPyWp8fbnLKQLC
 F0aU1/91fUCxN5twHjAF1KfIRQ2FoXos8UAj87PbtPoChUC2rVDaUNHKFH7/+c/7bhKHLvC09ZSnjhE4
