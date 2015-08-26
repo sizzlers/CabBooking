@@ -10,7 +10,7 @@
 <body>
 <form method="post" action="/CabBook/controller.portal?type=getData">
 <input type="submit" name="btnSubmit" value="Submit">
-   
+  Welcome 
 </form>                       
 </body>
 </html>
