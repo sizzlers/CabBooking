@@ -57,6 +57,7 @@ public class ListController extends HttpServlet {
      
      if ("getData".equalsIgnoreCase(type)) {
          //doViewDocumentDetails(request, response);
+         System.out.println("Hi changed");
     	 logger.info("Inside get Metadata");
     	 getMassMetadata(request, response); //August 8th Release QC:2288
      }      
