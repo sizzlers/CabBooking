@@ -27,7 +27,7 @@
 	<form method="post" action="/CabBook/controller.portal?type=getUserDetails">
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" class="form-control" id="username" placeholder="Username">
+            <input type="text" class="form-control" name="username" id="username" placeholder="Username">
         </div>
         <div class="form-group">
             <label for="inputPassword">Password</label>
