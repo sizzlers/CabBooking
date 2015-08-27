@@ -38,6 +38,30 @@ public class DbConn {
 	        }
 
 	    }
+	    public void createPreparedStatement(String sql) throws SQLException,
+        Exception {
+
+try {
+
+try {
+if (dbConn != null && !dbConn.isClosed()) {
+dbConn.close();
+}
+} catch (Exception e) {
+dbConn = null;
+}
+dbConn = null;
+
+dbConn = getConnection();
+
+_pstmt = dbConn.prepareStatement(sql);
+} catch (Exception e) {
+throw e;
+}
+
+}
+
+
 	    
 	    public boolean getNextRow() throws SQLException {
 	        boolean _resnext = false;
@@ -182,10 +206,10 @@ public class DbConn {
 
 		try {
 			
-			Class.forName("oracle.jdbc.driver.OracleDriver");  
+			Class.forName("com.mysql.jdbc.Driver");  
 			  
 			//step2 create  the connection object  
-			dbConn=DriverManager.getConnection("jdbc:oracle:thin:@ewdsacovn50.ebiz.verizon.com:1521:vzksit1","vzk_portal","vzkforgot");  
+			dbConn=DriverManager.getConnection("jdbc:mysql://localhost:3306/cbdb","root","root");    
 
 
 			return dbConn;

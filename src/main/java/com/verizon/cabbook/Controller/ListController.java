@@ -16,6 +16,7 @@ import org.apache.log4j.Logger;
 import utilities.CabLogger;
 
 import com.verizon.cabbook.Services.GetServices;
+import com.verizon.cabbook.model.UserBean;
 
 
 public class ListController extends HttpServlet {
@@ -57,6 +58,16 @@ public class ListController extends HttpServlet {
      
      if ("getData".equalsIgnoreCase(type)) {
          //doViewDocumentDetails(request, response);
+        
+    	 getMassMetadata(request, response); //August 8th Release QC:2288
+     }
+     else if ("getUserDetails".equalsIgnoreCase(type)) {
+         //doViewDocumentDetails(request, response);
+         
+    	 getUserDetails(request, response); //August 8th Release QC:2288
+     }      
+     else if ("submitTrip".equalsIgnoreCase(type)) {
+         //doViewDocumentDetails(request, response);
          System.out.println("Hi changed");
     	 logger.info("Inside get Metadata");
     	 getMassMetadata(request, response); //August 8th Release QC:2288
@@ -87,7 +98,51 @@ public class ListController extends HttpServlet {
 	RequestDispatcher rd = request.getRequestDispatcher("/jsp/errorPage.jsp");
 	rd.include(request, response);
 	}
-
 	}
+
+	 private void getUserDetails(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	try {
+
+		oService = new GetServices();
+		
+		UserBean oUserBean = new UserBean();
+		String vzId="";
+		if(request.getParameter("vzid")!=null)
+			vzId = request.getParameter("vzid");
+		
+		oUserBean = oService.getUserDetails(vzId);
+	
+		request.setAttribute("UserDetails", oUserBean);          
+		
+		request.getRequestDispatcher("/jsp/tripRequest.jsp").include(request,response);
+	} catch (Exception e) {
+
+	request.setAttribute("expcatch", e);
+	RequestDispatcher rd = request.getRequestDispatcher("/jsp/errorPage.jsp");
+	rd.include(request, response);
+	}
+	}
+
+	 private void submitTripRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			try {
+
+				oService = new GetServices();
+				
+				UserBean oUserBean = new UserBean();
+				int userID=0;
+				if(request.getParameter("userID")!=null)
+					userID = Integer.parseInt(request.getParameter("vzid"));
+				
+				boolean isSucc = oService.submitTrip(userID);
+				
+				request.getRequestDispatcher("/jsp/success.jsp").include(request,response);
+				
+			} catch (Exception e) {
+
+			request.setAttribute("expcatch", e);
+			RequestDispatcher rd = request.getRequestDispatcher("/jsp/errorPage.jsp");
+			rd.include(request, response);
+			}
+			}
 
 }
