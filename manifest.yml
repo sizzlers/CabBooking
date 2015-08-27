@@ -1,4 +1,4 @@
 applications:
 - name: CabBook
   instances: 1
-  path: ./target/CabBook-0.0.1-SNAPSHOT.war
+  path: ./target/CabBook.war
