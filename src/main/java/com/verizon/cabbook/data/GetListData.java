@@ -53,7 +53,7 @@ public class GetListData extends DbConn {
 	        boolean isSuccess = true;
 	        try {
 
-	            String sql = "select * from ad_caeb773c6f29a1b.tbl_user where vzid='"+vzId+"'";
+	            String sql = "select * from ad_caeb773c6f29a1b.tbl_users where vzid='"+vzId+"'";
 	            this.createPreparedStatement(sql);
 	            this._res= this._pstmt.executeQuery();
 	            
