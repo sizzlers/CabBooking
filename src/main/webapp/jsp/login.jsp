@@ -24,7 +24,7 @@
 </head>
 <body>
 <div class="bs-example">
-	<form method="post" action="/CabBook/jsp/cabbook.jsp">
+	<form method="post" action="/jsp/cabbook.jsp">
         <div class="form-group">
             <label for="username">Username *</label>
             <input type="text" class="form-control" name="username" id="username" placeholder="Username" required="">

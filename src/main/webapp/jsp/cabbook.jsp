@@ -32,7 +32,7 @@
   <h2>Cab Booking </h2>
   
   <div class=".desktop-only">
-  	<a href="/CabBook/jsp/triplisting.jsp" > Booking Details</a>
+  	<a href="/jsp/triplisting.jsp" > Booking Details</a>
   </div>
 
 <fieldset>

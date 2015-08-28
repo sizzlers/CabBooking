@@ -39,7 +39,7 @@ for (var i=0; i<localStorage.length; i++) {
 	    var triplist = localStorage.getItem(key);
 	    var item = triplist.split("-");
 	       var innerhtml = '<li class="list-group-item"><div class="row"><div class="form-group col-xs-6"><label class="control-label" for="lblname">Trip Date: </label>';
-	       innerhtml = innerhtml+ '<span>'+ item[1]+'</span></div>';
+	       innerhtml = innerhtml+ '<span>'+ formatDate(item[1])+'</span></div>';
 	       
 	       innerhtml = innerhtml+'<div class="form-group col-xs-6"><span style="float:right"><label class="control-label" for="number" >Vehicle Number: </label> <span name="number" >';
 	       innerhtml = innerhtml+ '<span>'+ item[0]+'</span></span></div></div>';
@@ -53,6 +53,12 @@ function toFeedBack(){
 alert('rewr'+id);
 
 location.href = '/CabBook/jsp/triplisting.jsp#'+id;
+}
+function formatDate(millisec)
+{
+
+	var obDatePassed = new Date(parseInt(millisec));
+ return (obDatePassed.getMonth()+1) +"/"+ obDatePassed.getDate() + "/" +  obDatePassed.getFullYear() + " " + obDatePassed.getHours() +" : " + obDatePassed.getMinutes();
 }
 	</script>
 </html>
