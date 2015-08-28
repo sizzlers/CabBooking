@@ -209,7 +209,7 @@ throw e;
 			Class.forName("com.mysql.jdbc.Driver");  
 			  
 			//step2 create  the connection object  
-			dbConn=DriverManager.getConnection("jdbc:mysql://localhost:3306/cbdb","root","root");    
+			dbConn=DriverManager.getConnection("jdbc:mysql://us-cdbr-iron-east-02.cleardb.net:3306/ad_caeb773c6f29a1b","bc7fd8fea7151a","54a04559");    
 
 
 			return dbConn;

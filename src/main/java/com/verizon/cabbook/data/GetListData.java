@@ -33,7 +33,7 @@ public class GetListData extends DbConn {
 	        boolean isSuccess = false;
 	        try {
 
-	            String sql = "insert into user_request(user_id)values("+userId+")";
+	            String sql = "insert into ad_caeb773c6f29a1b.user_request(user_id)values("+userId+")";
 	            this.createPreparedStatement(sql);
 	            int rowsAffected = this._pstmt.executeUpdate();
 	            if(rowsAffected > 0)
@@ -53,7 +53,7 @@ public class GetListData extends DbConn {
 	        boolean isSuccess = true;
 	        try {
 
-	            String sql = "select * from tbl_user";
+	            String sql = "select * from ad_caeb773c6f29a1b.tbl_users where vzid='"+vzId+"'";
 	            this.createPreparedStatement(sql);
 	            this._res= this._pstmt.executeQuery();
 	            
