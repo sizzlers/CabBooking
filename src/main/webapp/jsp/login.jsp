@@ -24,14 +24,14 @@
 </head>
 <body>
 <div class="bs-example">
-	<form method="post" action="/CabBook/controller.portal?type=getUserDetails">
+	<form method="post" action="/CabBook/jsp/cabbook.jsp">
         <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+            <label for="username">Username *</label>
+            <input type="text" class="form-control" name="username" id="username" placeholder="Username" required="">
         </div>
         <div class="form-group">
-            <label for="inputPassword">Password</label>
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            <label for="inputPassword">Password *</label>
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password" required="">
         </div>
         
         <button type="submit" class="btn btn-primary">Login</button>

@@ -28,7 +28,7 @@
 					</div>
 
 					<div class="form-group col-xs-6">
-						<button type="submit" class="btn btn-primary">Allocate</button>
+						<button type="submit" class="btn btn-primary" style="float:right">Allocate</button>
 					</div>
 			</div>
 							

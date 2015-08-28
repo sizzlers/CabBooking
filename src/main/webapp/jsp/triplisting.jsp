@@ -15,68 +15,44 @@
     	margin: 20px;
     }
 </style>
+<script type="text/javascript">
+$( document ).ready(function() {
+	gettriplists();
+});
+
+</script>
 </head>
 <body>
 	<div class="container">
   <h2>Trips: </h2>
-  <ul class="list-group">
-    <li class="list-group-item">
-    		<div class="row">
-					<div class="form-group col-xs-6">
-						<label class="control-label" for="lblname">Trip Date: </label> <span>
-							test</span>
-					</div>
-
-					<div class="form-group col-xs-6">
-						<label class="control-label" for="lblname">Number: </label> <span>
-							1234</span>
-					</div>
-			</div>
-				<button type="submit" class="btn btn-primary">Leave Feedback</button>
-    </li>
-    <li class="list-group-item">
-    	<div class="row">
-					<div class="form-group col-xs-6">
-						<label class="control-label" for="lblname">Trip Date: </label> <span>
-							test</span>
-					</div>
-
-					<div class="form-group col-xs-6">
-						<label class="control-label" for="lblname">Number: </label> <span>
-							1234</span>
-					</div>
-			</div>
-				<button type="submit" class="btn btn-primary">Leave Feedback</button>
-    </li>
-    <li class="list-group-item">
-    	<div class="row">
-					<div class="form-group col-xs-6">
-						<label class="control-label" for="lblname">Trip Date: </label> <span>
-							test</span>
-					</div>
-
-					<div class="form-group col-xs-6">
-						<label class="control-label" for="lblname">Number: </label> <span>
-							1234</span>
-					</div>
-			</div>
-				<button type="submit" class="btn btn-primary">Leave Feedback</button>
-    </li>
-    <li class="list-group-item">
-    	<div class="row">
-					<div class="form-group col-xs-6">
-						<label class="control-label" for="lblname">Trip Date: </label> <span>
-							test</span>
-					</div>
-
-					<div class="form-group col-xs-6">
-						<label class="control-label" for="lblname">Number: </label> <span>
-							1234</span>
-					</div>
-			</div>
-				<button type="submit" class="btn btn-primary">Leave Feedback</button>
-    </li>
+  <ul class="list-group" id="triplisting">
+    
   </ul>
 </div>
 </body>
+<script>
+function gettriplists(){
+var html = '';
+for (var i=0; i<localStorage.length; i++) {
+    	var key = localStorage.key(i);
+	    if (/^cr/.test(key)) {
+	    var triplist = localStorage.getItem(key);
+	    var item = triplist.split("-");
+	       var innerhtml = '<li class="list-group-item"><div class="row"><div class="form-group col-xs-6"><label class="control-label" for="lblname">Trip Date: </label>';
+	       innerhtml = innerhtml+ '<span>'+ item[1]+'</span></div>';
+	       
+	       innerhtml = innerhtml+'<div class="form-group col-xs-6"><span style="float:right"><label class="control-label" for="number" >Vehicle Number: </label> <span name="number" >';
+	       innerhtml = innerhtml+ '<span>'+ item[0]+'</span></span></div></div>';
+	       innerhtml = innerhtml+ '<button type="submit" class="btn btn-primary" onclick="toFeedBack('+key+')">Leave Feedback</button></li>';
+	       html = html+innerhtml;
+	    }
+	}
+	$("#triplisting").html(html);
+}
+function toFeedBack(){
+alert('rewr'+id);
+
+location.href = '/CabBook/jsp/triplisting.jsp#'+id;
+}
+	</script>
 </html>
