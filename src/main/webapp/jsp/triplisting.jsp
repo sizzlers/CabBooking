@@ -4,61 +4,115 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Trip Listing</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
-<style type="text/css">
-    .bs-example{
-    	margin: 20px;
-    }
-</style>
-<script type="text/javascript">
-$( document ).ready(function() {
-	gettriplists();
-});
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-</script>
+        <!-- CSS -->
+        
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <style type="text/css">
+        ul{
+        	list-style-type:none !important;
+        }
+        li {
+        	border-bottom-style: solid !important;
+        }
+        .centered{
+        	position: absolute;
+        	left : 20%;
+        	
+        }
+        </style>
 </head>
 <body>
-	<div class="container">
-  <h2>Trips: </h2>
-  <ul class="list-group" id="triplisting">
-    
-  </ul>
-</div>
+	<div class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="span6">
+                        <h1><span class="red" style="margin-left:20px"><strong>Verizon</strong></span></h1>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="register-container container" >
+            <div class="row">
+                
+                <div class="register span6" >
+                    <form >
+                        <h2><span class="red"><strong>Trips</strong></span></h2>
+
+					<ul class="list-group">
+						<li class="list-group-item">
+							<div class="row">
+								<div class="form-group col-xs-6">
+									<label for="name"><strong>Trip Date: </strong> <span>test</span></label>
+								</div>
+
+								<div class="form-group col-xs-6">
+									<label for="name"><strong>Number: </strong> <span>1234</span></label>
+								</div>
+							</div>
+							<a style="float:left !important"  class="btn btn-primary">Leave
+								Feedback</a>
+								<label >&nbsp;</label> 
+						</li>
+						<li class="list-group-item">
+							<div class="row">
+								<div class="form-group col-xs-6">
+									<label for="name"><strong>Trip Date: </strong> <span>test</span></label>
+								</div>
+
+								<div class="form-group col-xs-6">
+									<label for="name"><strong>Number: </strong> <span>1234</span></label>
+								</div>
+							</div>
+							<a style="float:left !important"  class="btn btn-primary">Leave
+								Feedback</a>
+								<label >&nbsp;</label>
+						</li>
+						<li class="list-group-item">
+							<div class="row">
+								<div class="form-group col-xs-6">
+									<label for="name"><strong>Trip Date: </strong> <span>test</span></label>
+								</div>
+
+								<div class="form-group col-xs-6">
+									<label for="name"><strong>Number: </strong> <span>1234</span></label>
+								</div>
+							</div>
+							<a style="float:left !important"  class="btn btn-primary">Leave
+								Feedback</a>
+								<label >&nbsp;</label> 
+						</li>
+						<li class="list-group-item">
+							<div class="row">
+								<div class="form-group col-xs-6">
+									<label for="name"><strong>Trip Date: </strong> <span>test</span></label>
+								</div>
+
+								<div class="form-group col-xs-6">
+									<label for="name"><strong>Number: </strong> <span>1234</span></label>
+								</div>
+							</div>
+							<a style="float:left !important"  class="btn btn-primary">Leave
+								Feedback</a>
+								<label >&nbsp;</label> 
+						</li>
+						</ul>
+				</form>
+                </div>
+            </div>
+        </div>
+	
 </body>
-<script>
-function gettriplists(){
-var html = '';
-for (var i=0; i<localStorage.length; i++) {
-    	var key = localStorage.key(i);
-	    if (/^cr/.test(key)) {
-	    var triplist = localStorage.getItem(key);
-	    var item = triplist.split("-");
-	       var innerhtml = '<li class="list-group-item"><div class="row"><div class="form-group col-xs-6"><label class="control-label" for="lblname">Trip Date: </label>';
-	       innerhtml = innerhtml+ '<span>'+ formatDate(item[1])+'</span></div>';
-	       
-	       innerhtml = innerhtml+'<div class="form-group col-xs-6"><span style="float:right"><label class="control-label" for="number" >Vehicle Number: </label> <span name="number" >';
-	       innerhtml = innerhtml+ '<span>'+ item[0]+'</span></span></div></div>';
-	       innerhtml = innerhtml+ '<button type="submit" class="btn btn-primary" onclick="toFeedBack('+key+')">Leave Feedback</button></li>';
-	       html = html+innerhtml;
-	    }
-	}
-	$("#triplisting").html(html);
-}
-function toFeedBack(){
-alert('rewr'+id);
-
-location.href = '/CabBook/jsp/triplisting.jsp#'+id;
-}
-function formatDate(millisec)
-{
-
-	var obDatePassed = new Date(parseInt(millisec));
- return (obDatePassed.getMonth()+1) +"/"+ obDatePassed.getDate() + "/" +  obDatePassed.getFullYear() + " " + obDatePassed.getHours() +" : " + obDatePassed.getMinutes();
-}
-	</script>
+ <!-- Javascript -->
+        <script src="assets/js/jquery-1.8.2.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
 </html>
