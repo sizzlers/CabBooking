@@ -45,9 +45,9 @@
                     <img src="assets/img/iphone.png" alt="">
                 </div>
                 <div class="register span6">
-                    <form action="" method="post">
+                    <form  method="post">
                         <h2><div><span class="red"><strong>Cab Booking</strong></span>
-                            <a href="/jsp/tripdetails.jsp"><img src="assets/img/details.png" style="float:right !important" rel="tooltip" data-placement="bottom" data-original-title="Trip Details"></a>
+                            <a href="/jsp/triplisting.jsp"><img src="assets/img/details.png" style="float:right !important" rel="tooltip" data-placement="bottom" data-original-title="Trip Details"></a>
                             </a>
                         </div></h2>
                         

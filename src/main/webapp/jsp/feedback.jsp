@@ -30,6 +30,11 @@
 
         	}, 2000);
         }
+
+        function goBack(){
+        	//alert(localStorage.getItem("cr2"));
+        	window.history.go(-1);
+        }
         </script>
 </head>
 <body>
@@ -51,7 +56,7 @@
                             <img src="assets/img/iphone.png" alt="">
                         </div>
                         <div class="register span6">
-                            <form action="" method="post" action="/jsp/cabbook.jsp">
+                            <form method="post" >
                                 <h2><span class="red"><strong>Leave a Feedback</strong></span></h2>
 
                                 <label for="name"><strong>Trip Date: </strong> <span>31/08/2015</span></label>
@@ -60,6 +65,7 @@
                                 <textarea id="address" name="address" style="width:100%" required=""/></textarea>
 
                                 <button type="submit" onclick="submitFeedback()">Leave Feedback</button>
+                                <button type="submit" onclick="goBack()">Back</button>
                             </form>
                         </div>
                     </div>

@@ -43,7 +43,7 @@
                     <img src="assets/img/iphone.png" alt="">
                 </div>
                 <div class="register span6">
-                    <form action="" method="post" action="/jsp/cabbook.jsp">
+                    <form method="post" action="/jsp/cabbook.jsp">
                         <h2><span class="red"><strong>Login to Book a Cab</strong></span></h2>
                         
                         <label for="username">Username</label>
