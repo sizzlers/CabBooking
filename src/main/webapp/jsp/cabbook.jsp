@@ -75,7 +75,7 @@
                     		<div id="divSucc" style="color:red; display:none"></div>
                     </div>
 					
-					<button type="submit" style="margin-top:20px !important"  onclick="bookingrequest();">Book</button>
+					<button type="button" style="margin-top:20px !important"  onclick="bookingrequest();">Book</button>
                         
                         <button type="cancel" style="background-color:#BDBDBD !important" onclick="goBack();">Cancel</button>
                     </form>

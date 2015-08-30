@@ -27,7 +27,7 @@
         }
 
 </head>
-<body>
+<body onload="gettriplists()">
 	<div class="header">
             <div class="container">
                 <div class="row">
@@ -66,11 +66,9 @@
         <script src="assets/js/scripts.js"></script>
 
 
-         </style>
+
                 <script type="text/javascript">
-                $( document ).ready(function() {
-                	gettriplists();
-                });
+
 
                 function gettriplists(){
                 var html = '';
@@ -84,11 +82,11 @@
 
                 	       innerhtml = innerhtml+'<div class="form-group col-xs-6"><label for="name"><strong>Vehicle Number: </strong> <span>';
                 	       innerhtml = innerhtml+ '</span></label></div></div>';
-                	       innerhtml = innerhtml+ '<a style="float:left !important"  class="btn btn-primary">Leave Feedback</a><label >&nbsp;</label></li>';
+                	       innerhtml = innerhtml+ '<a style="float:left !important" href="/jsp/feedback.jsp" class="btn btn-primary">Leave Feedback</a><label >&nbsp;</label></li>';
                 	       html = html+innerhtml;
                 	    }
                 	}
-                	$("#triplisting").html(html);
+                	document.getElementById("triplisting").innerHTML = html;
                 }
 
                 	</script>
