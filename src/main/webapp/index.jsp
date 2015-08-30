@@ -1,5 +1,12 @@
 <html>
 <body>
-<h2>Hello World!</h2>
+<h2>Welcome to Cab Booking!</h2>
 </body>
 </html>
+<script>
+function fnLoad()
+{
+  window.location = '/jsp/login.jsp';
+}
+fnLoad();
+</script>
