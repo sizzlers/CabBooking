@@ -27,7 +27,11 @@
         }
         </style>
         <script type="text/javascript">
-
+						function formatDate(millisec)
+                        {
+                        	var obDatePassed = new Date(parseInt(millisec));
+                         return (obDatePassed.getMonth()+1) +"/"+ obDatePassed.getDate() + "/" +  obDatePassed.getFullYear() + " " + obDatePassed.getHours() +" : " + obDatePassed.getMinutes();
+                        }
 
                         function gettriplists(){
                         var html = '';
@@ -37,10 +41,10 @@
                         	    var triplist = localStorage.getItem(key);
                         	    var item = triplist.split("-");
                         	       var innerhtml = '<li class="list-group-item"><div class="row"><div class="form-group col-xs-6"><label for="name"><strong>Trip Date: </strong> <span>';
-                        	       innerhtml = innerhtml+ item[1]+'</span></label></div>';
+                        	       innerhtml = innerhtml+ formatDate(item[1])+'</span></label></div>';
 
                         	       innerhtml = innerhtml+'<div class="form-group col-xs-6"><label for="name"><strong>Vehicle Number: </strong> <span>';
-                        	       innerhtml = innerhtml+ '</span></label></div></div>';
+                        	       innerhtml = innerhtml+item[0]+ '</span></label></div></div>';
                         	       innerhtml = innerhtml+ '<a style="float:left !important" href="/jsp/feedback.jsp" class="btn btn-primary">Leave Feedback</a><label >&nbsp;</label></li>';
                         	       html = html+innerhtml;
                         	    }
