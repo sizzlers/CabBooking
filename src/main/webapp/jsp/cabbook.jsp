@@ -28,8 +28,11 @@
                 <div class="row">
                     <div class="span6">
                         <h1><span class="red" style="margin-left:20px"><strong>Verizon</strong></span></h1>
-                        <a href=""><img src="assets/img/details.png" style="float:right !important" rel="tooltip" data-placement="bottom" data-original-title="Trip Details"></a>
+                        <label >&nbsp;</label>
+                        <span style="float:right">
+                        <a href="/jsp/cabmanagement.jsp">Cab Management</a>
                         </a>
+                            </span>
                     </div>
                     
                 </div>
@@ -43,7 +46,10 @@
                 </div>
                 <div class="register span6">
                     <form action="" method="post">
-                        <h2><span class="red"><strong>Cab Booking</strong></span></h2>
+                        <h2><div><span class="red"><strong>Cab Booking</strong></span>
+                            <a href="/jsp/tripdetails.jsp"><img src="assets/img/details.png" style="float:right !important" rel="tooltip" data-placement="bottom" data-original-title="Trip Details"></a>
+                            </a>
+                        </div></h2>
                         
                         
                         <label for="name"><strong>Name: </strong> <span>Suresh Anandaraj</span></label> 
@@ -61,15 +67,17 @@
 							<li><a href="#">RMZ</a></li>
 						</ul>
 					</div>
-					<label >&nbsp;</label> 
+					<label >&nbsp;</label>
               <label for="address" style="float:left !important"><strong>Address: </strong></label> 
                         <textarea id="address" name="address" style="width:100%" required=""/>254, 2nd Main rd, Kalaingar nagar, Kovilpathagai, Avadi - 62</textarea>
 
+					<div class="control-group">
+                    		<div id="divSucc" style="color:red; display:none"></div>
+                    </div>
 					
-					
-					<button type="submit" style="margin-top:20px !important">Book</button>
+					<button type="submit" style="margin-top:20px !important"  onclick="bookingrequest();">Book</button>
                         
-                        <button type="cancel" style="background-color:#BDBDBD !important">Cancel</button>
+                        <button type="cancel" style="background-color:#BDBDBD !important" onclick="goBack();">Cancel</button>
                     </form>
                 </div>
             </div>
@@ -82,5 +90,35 @@
         <script src="assets/js/scripts.js"></script>
 
     </body>
+<script>
+function bookingrequest(){
+	/*var prefix = 'cr';
+	var cabs = ["TN10Y7986", "TN20C1234", "TN10A5432", "TN10X6547", "TN20X6332", "TN20F8745"];
+	var cabno = cabs[Math.floor(Math.random() * cabs.length)];
 
+	var count=1;
+	for (var i=0; i<localStorage.length; i++) {
+    	var key = localStorage.key(i);
+	    if (/^cr/.test(key)) {
+	        count++;
+	    }
+	}
+	var key = prefix+count;
+	var time = new Date().getTime();
+	var data = cabno+"-"+time;
+
+	localStorage.setItem(key, data);*/
+	var myVar = setTimeout(function(){
+		$("#divSucc").html("Your cab booking request submitted successfully, We will send the cab details to your mobile");
+		document.getElementById("divSucc").style.display = "block";
+		document.getElementById("button1id").disabled=true;
+		clearInterval(myVar);
+
+	}, 2000);
+}
+function goBack(){
+	//alert(localStorage.getItem("cr2"));
+	window.history.go(-1);
+}
+</script>
 </html>
