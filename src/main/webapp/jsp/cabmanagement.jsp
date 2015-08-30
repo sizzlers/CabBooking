@@ -21,28 +21,7 @@
 		border-bottom-style: solid !important;
 		}
 </style>
-	<script>
-function allocate(cabNumber){
-	var prefix = 'cr';
-	//var cabs = ["TN10Y7986", "TN20C1234", "TN10A5432", "TN10X6547", "TN20X6332", "TN20F8745"];
-	//var cabno = cabs[Math.floor(Math.random() * cabs.length)];
 
-	var count=1;
-	for (var i=0; i<localStorage.length; i++) {
-    	var key = localStorage.key(i);
-	    if (/^cr/.test(key)) {
-	        count++;
-	    }
-	}
-	var key = prefix+count;
-	var time = new Date().getTime();
-	var data = cabNumber+"-"+time;
-
-	localStorage.setItem(key, data);
-
-	alert('Cab Allocated..');
-	}
-	</script>
 </head>
 <body>
 
@@ -221,4 +200,27 @@ function allocate(cabNumber){
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/jquery.backstretch.min.js"></script>
 <script src="assets/js/scripts.js"></script>
+
+<script>
+function allocate(cabNumber){
+	var prefix = 'cr';
+	//var cabs = ["TN10Y7986", "TN20C1234", "TN10A5432", "TN10X6547", "TN20X6332", "TN20F8745"];
+	//var cabno = cabs[Math.floor(Math.random() * cabs.length)];
+
+	var count=1;
+	for (var i=0; i<localStorage.length; i++) {
+    	var key = localStorage.key(i);
+	    if (/^cr/.test(key)) {
+	        count++;
+	    }
+	}
+	var key = prefix+count;
+	var time = new Date().getTime();
+	var data = cabNumber+"-"+time;
+
+	localStorage.setItem(key, data);
+
+	alert('Cab Allocated..');
+	}
+	</script>
 </html>

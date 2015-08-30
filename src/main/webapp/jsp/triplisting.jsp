@@ -25,32 +25,7 @@
         	left : 20%;
         	
         }
-        </style>
-        <script type="text/javascript">
-        $( document ).ready(function() {
-        	gettriplists();
-        });
 
-        function gettriplists(){
-        var html = '';
-        for (var i=0; i<localStorage.length; i++) {
-            	var key = localStorage.key(i);
-        	    if (/^cr/.test(key)) {
-        	    var triplist = localStorage.getItem(key);
-        	    var item = triplist.split("-");
-        	       var innerhtml = '<li class="list-group-item"><div class="row"><div class="form-group col-xs-6"><label for="name"><strong>Trip Date: </strong> <span>';
-        	       innerhtml = innerhtml+ item[1]+'</span></label></div>';
-
-        	       innerhtml = innerhtml+'<div class="form-group col-xs-6"><label for="name"><strong>Vehicle Number: </strong> <span>';
-        	       innerhtml = innerhtml+ '</span></label></div></div>';
-        	       innerhtml = innerhtml+ '<a style="float:left !important"  class="btn btn-primary">Leave Feedback</a><label >&nbsp;</label></li>';
-        	       html = html+innerhtml;
-        	    }
-        	}
-        	$("#triplisting").html(html);
-        }
-
-        	</script>
 </head>
 <body>
 	<div class="header">
@@ -89,4 +64,32 @@
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/js/jquery.backstretch.min.js"></script>
         <script src="assets/js/scripts.js"></script>
+
+
+         </style>
+                <script type="text/javascript">
+                $( document ).ready(function() {
+                	gettriplists();
+                });
+
+                function gettriplists(){
+                var html = '';
+                for (var i=0; i<localStorage.length; i++) {
+                    	var key = localStorage.key(i);
+                	    if (/^cr/.test(key)) {
+                	    var triplist = localStorage.getItem(key);
+                	    var item = triplist.split("-");
+                	       var innerhtml = '<li class="list-group-item"><div class="row"><div class="form-group col-xs-6"><label for="name"><strong>Trip Date: </strong> <span>';
+                	       innerhtml = innerhtml+ item[1]+'</span></label></div>';
+
+                	       innerhtml = innerhtml+'<div class="form-group col-xs-6"><label for="name"><strong>Vehicle Number: </strong> <span>';
+                	       innerhtml = innerhtml+ '</span></label></div></div>';
+                	       innerhtml = innerhtml+ '<a style="float:left !important"  class="btn btn-primary">Leave Feedback</a><label >&nbsp;</label></li>';
+                	       html = html+innerhtml;
+                	    }
+                	}
+                	$("#triplisting").html(html);
+                }
+
+                	</script>
 </html>
