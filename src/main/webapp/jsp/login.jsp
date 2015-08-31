@@ -29,7 +29,7 @@
             <div class="container">
                 <div class="row">
                     <div class="span6">
-                        <h1><span class="red" style="margin-left:20px"><strong>Verizon</strong></span></h1>
+                        <h1><span class="red" style="margin-left:20px"><strong>Verizon Hackathon Demo</strong></span></h1>
                     </div>
                     
                     
